@@ -5,7 +5,7 @@ import org.slf4j.Marker
 import org.slf4j.Logger
 
 
-fun KLogger.withTraceLogs(): KLogger = KLoggerOpenTracingDecorator(this)
+fun KLogger.withOpenTracingLogs(): KLogger = KLoggerOpenTracingDecorator(this)
 
 internal class KLoggerOpenTracingDecorator(private val kLogger: KLogger) : KLogger {
     override val underlyingLogger: Logger

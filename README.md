@@ -1,0 +1,18 @@
+![GitHub](https://img.shields.io/github/license/fstien/kotlin-logging-opentracing-decorator.svg?color=green&style=popout)
+[![Unit Tests Actions Status](https://github.com/zopaUK/ktor-opentracing/workflows/Unit%20Tests/badge.svg)](https://github.com/{userName}/{repoName}/actions)
+
+# [kotlin-logging](https://github.com/MicroUtils/kotlin-logging) OpenTracing Decorator
+
+Small library on top of [kotlin-logging](https://github.com/MicroUtils/kotlin-logging) which writes  [OpenTracing logs](https://opentracing.io/docs/overview/tags-logs-baggage/#logs) in addition to regular logs, by the means of a [decorator](https://en.wikipedia.org/wiki/Decorator_pattern). 
+
+
+
+
+## Usage 
+In an application with a tracer registered in [GlobalTracer](https://opentracing.io/guides/java/tracers/#global-tracer), extend your regular [logger](https://github.com/MicroUtils/kotlin-logging) instance with OpenTracing logs: 
+```kotlin
+val logger = KotlinLogging.logger {}.withOpenTracingLogs()
+```
+You can now use the `logger` as before as it still implements the [KLogger](https://github.com/MicroUtils/kotlin-logging/blob/master/src/jsMain/kotlin/mu/KLogger.kt) interfaces. Hence, if you are already using [kotlin-logging](https://github.com/MicroUtils/kotlin-logging), you do not need to make any further changes to your application. 
+
+

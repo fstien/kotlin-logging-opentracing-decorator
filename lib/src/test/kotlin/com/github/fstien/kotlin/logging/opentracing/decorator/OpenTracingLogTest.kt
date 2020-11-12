@@ -19,7 +19,7 @@ import java.util.Stack
 
 
 class ClassHasLogging: KLoggable {
-    override val logger = logger().withTraceLogs()
+    override val logger = logger().withOpenTracingLogs()
     fun test() = span {
         logger.info { "An interesting info log." }
     }

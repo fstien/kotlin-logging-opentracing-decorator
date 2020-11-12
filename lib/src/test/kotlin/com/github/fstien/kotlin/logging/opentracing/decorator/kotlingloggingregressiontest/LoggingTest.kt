@@ -1,6 +1,6 @@
 package com.github.fstien.kotlin.logging.opentracing.decorator.kotlingloggingregressiontest
 
-import com.github.fstien.kotlin.logging.opentracing.decorator.withTraceLogs
+import com.github.fstien.kotlin.logging.opentracing.decorator.withOpenTracingLogs
 import mu.KLoggable
 import org.apache.logging.log4j.Level
 import org.apache.logging.log4j.LogManager
@@ -15,7 +15,7 @@ import org.junit.Test
 import java.io.StringWriter
 
 open class ClassHasLogging : KLoggable {
-    override val logger = logger().withTraceLogs()
+    override val logger = logger().withOpenTracingLogs()
     fun test() {
         logger.info { "test ClassHasLogging" }
     }
@@ -23,7 +23,7 @@ open class ClassHasLogging : KLoggable {
 
 class CompanionHasLogging {
     companion object : Any(), KLoggable {
-        override val logger = logger().withTraceLogs()
+        override val logger = logger().withOpenTracingLogs()
     }
 
     fun test() {
