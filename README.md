@@ -13,11 +13,6 @@ val logger = KotlinLogging.logger {}.withOpenTracingLogs()
 ```
 You can now use the `logger` as before as it still implements the [KLogger](https://github.com/MicroUtils/kotlin-logging/blob/master/src/jvmMain/kotlin/mu/KLogger.kt) interfaces. Hence, if you are already using [kotlin-logging](https://github.com/MicroUtils/kotlin-logging), you do not need to make any further changes to your application. 
 
-Alternatively, you can simply instantiate the same logger as such:
-```kotlin
-val logger = Logging.logger {}
-```
-
 
 ## Installation
 
