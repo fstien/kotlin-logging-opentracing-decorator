@@ -19,11 +19,10 @@ class ForKotlinLoggingTest {
     }
 }
 
-class KotlinLoggingTest {
-
+class WithOpenTracingLogsExtensionTest {
     @Test
     fun testLoggerName() {
-        assertEquals("com.github.fstien.kotlin.logging.opentracing.decorator.kotlingloggingregressiontest.KotlinLoggingTest", logger.name)
+        assertEquals("com.github.fstien.kotlin.logging.opentracing.decorator.kotlingloggingregressiontest.WithOpenTracingLogsExtensionTest", logger.name)
         assertEquals("com.github.fstien.kotlin.logging.opentracing.decorator.kotlingloggingregressiontest.ForKotlinLoggingTest", ForKotlinLoggingTest().loggerInClass.name)
         assertEquals("com.github.fstien.kotlin.logging.opentracing.decorator.kotlingloggingregressiontest.ForKotlinLoggingTest", ForKotlinLoggingTest.loggerInCompanion.name)
         assertEquals("mu.slf4jLogger", loggerFromSlf4j.name)
