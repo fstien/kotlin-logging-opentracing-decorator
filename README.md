@@ -34,3 +34,5 @@ Add the following to your dependencies in your `build.gradle`:
 
 ## Example
 For use in a [Ktor](https://ktor.io/) application, see [kotlin-logging-opentracing-decorator-example](https://github.com/fstien/kotlin-logging-opentracing-decorator-example).
+
+![image](./jaegerscreenshotlogger.png)
