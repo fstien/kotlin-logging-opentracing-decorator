@@ -13,22 +13,26 @@ internal fun KLogger.tracerLog(
         message: String? = null,
         t: Throwable? = null) {
 
-    val activeSpan = GlobalTracer.get()?.activeSpan() ?: return
+    try {
+        val activeSpan = GlobalTracer.get()?.activeSpan() ?: return
 
-    val fields = mutableMapOf<String, String>()
-    if (level != null) fields["level"] = level.toString()
-    if (message != null) fields["message"] = message
-    if (t != null) fields["exception"] = t.toStackTrace()
+        val fields = mutableMapOf<String, String>()
+        if (level != null) fields["level"] = level.toString()
+        if (message != null) fields["message"] = message
+        if (t != null) fields["exception"] = t.toStackTrace()
 
-    when (level) {
-        LEVEL.Trace -> if (this.isInfoEnabled) activeSpan.log(fields)
-        LEVEL.Debug -> if (this.isDebugEnabled) activeSpan.log(fields)
-        LEVEL.Info -> if (this.isInfoEnabled) activeSpan.log(fields)
-        LEVEL.Warn -> if (this.isWarnEnabled) activeSpan.log(fields)
-        LEVEL.Error -> if (this.isErrorEnabled) {
-            activeSpan.log(fields)
-            activeSpan.setTag("error", true)
+        when (level) {
+            LEVEL.Trace -> if (this.isTraceEnabled) activeSpan.log(fields)
+            LEVEL.Debug -> if (this.isDebugEnabled) activeSpan.log(fields)
+            LEVEL.Info -> if (this.isInfoEnabled) activeSpan.log(fields)
+            LEVEL.Warn -> if (this.isWarnEnabled) activeSpan.log(fields)
+            LEVEL.Error -> if (this.isErrorEnabled) {
+                activeSpan.log(fields)
+                activeSpan.setTag("error", true)
+            }
         }
+    } catch (e: Exception) {
+        this.error(e) { "Exception thrown whilst writing log to active span: ${e.message}" }
     }
 }
 
