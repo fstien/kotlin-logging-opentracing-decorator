@@ -32,7 +32,7 @@ internal fun KLogger.tracerLog(
             }
         }
     } catch (e: Exception) {
-        this.error(e) { "Exception thrown whilst writing log to active span: ${e.message}" }
+        this.warn(e) { "Exception thrown whilst writing log to active span: ${e.message}" }
     }
 }
 
