@@ -50,7 +50,7 @@ publish {
     repoName = 'kotlin-logging-opentracing-decorator'
     groupId = 'com.github.fstien'
     artifactId = 'kotlin-logging-opentracing-decorator'
-    publishVersion = '0.1.1'
+    publishVersion = '0.1.2'
     desc = 'Small library on top of kotlin-logging which writes OpenTracing logs in addition to regular logs, by the means of a decorator.'
     website = 'https://github.com/fstien/kotlin-logging-opentracing-decorator'
 }
