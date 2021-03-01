@@ -22,7 +22,7 @@ internal fun KLogger.tracerLog(
         if (t != null) fields["exception"] = t.toStackTrace()
 
         when (level) {
-            LEVEL.Trace -> if (this.isInfoEnabled) activeSpan.log(fields)
+            LEVEL.Trace -> if (this.isTraceEnabled) activeSpan.log(fields)
             LEVEL.Debug -> if (this.isDebugEnabled) activeSpan.log(fields)
             LEVEL.Info -> if (this.isInfoEnabled) activeSpan.log(fields)
             LEVEL.Warn -> if (this.isWarnEnabled) activeSpan.log(fields)
