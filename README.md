@@ -1,4 +1,4 @@
- [![Download](https://api.bintray.com/packages/fstien/kotlin-logging-opentracing-decorator/kotlin-logging-opentracing-decorator/images/download.svg)](https://bintray.com/fstien/kotlin-logging-opentracing-decorator/kotlin-logging-opentracing-decorator/_latestVersion)
+![Maven Central](https://img.shields.io/maven-central/v/com.github.fstien/kotlin-logging-opentracing-decorator?color=green)
  ![GitHub](https://img.shields.io/github/license/fstien/kotlin-logging-opentracing-decorator.svg?color=green&style=popout)
 [![Unit Tests Actions Status](https://github.com/zopaUK/ktor-opentracing/workflows/Unit%20Tests/badge.svg)](https://github.com/{userName}/{repoName}/actions)
 
