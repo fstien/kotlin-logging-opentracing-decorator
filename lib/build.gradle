@@ -57,7 +57,7 @@ publish {
 
 ext {
     PUBLISH_GROUP_ID = 'com.github.fstien'
-    PUBLISH_VERSION = '0.1.4'
+    PUBLISH_VERSION = '0.1.5'
     PUBLISH_ARTIFACT_ID = 'kotlin-logging-opentracing-decorator'
 }
 
