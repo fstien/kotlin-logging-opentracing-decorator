@@ -54,3 +54,11 @@ publish {
     desc = 'Small library on top of kotlin-logging which writes OpenTracing logs in addition to regular logs, by the means of a decorator.'
     website = 'https://github.com/fstien/kotlin-logging-opentracing-decorator'
 }
+
+ext {
+    PUBLISH_GROUP_ID = 'com.github.fstien'
+    PUBLISH_VERSION = '0.1.5'
+    PUBLISH_ARTIFACT_ID = 'kotlin-logging-opentracing-decorator'
+}
+
+apply from: "${rootProject.projectDir}/scripts/publish-module.gradle"
