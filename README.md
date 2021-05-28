@@ -11,12 +11,17 @@ In an application with a tracer registered in [GlobalTracer](https://opentracing
 ```kotlin
 val logger = KotlinLogging.logger {}.withOpenTracingLogs()
 ```
+Alternatively you instantiate an identical logger as such:
+```kotlin
+val logger = Logging.logger {}
+```
+
 You can now use the `logger` as before as it still implements the [KLogger](https://github.com/MicroUtils/kotlin-logging/blob/master/src/jvmMain/kotlin/mu/KLogger.kt) interfaces. Hence, if you are already using [kotlin-logging](https://github.com/MicroUtils/kotlin-logging), you do not need to make any further changes to your application. 
 
 
 ## Installation
 
-Available for download from [jcenter](https://bintray.com/fstien/ktor-header-forwarding/ktor-header-forwarding).
+From [Maven Central](https://search.maven.org/artifact/com.github.fstien/kotlin-logging-opentracing-decorator).
 ### Maven
 Add the following dependency to your `pom.xml`:
     
