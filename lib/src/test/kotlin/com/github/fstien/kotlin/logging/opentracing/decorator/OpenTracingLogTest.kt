@@ -4,18 +4,12 @@ import assertk.assertThat
 import assertk.assertions.isEqualTo
 import assertk.assertions.isTrue
 import com.zopa.ktor.opentracing.ThreadContextElementScopeManager
-import com.zopa.ktor.opentracing.span
-import com.zopa.ktor.opentracing.threadLocalSpanStack
-import io.opentracing.Span
 import io.opentracing.mock.MockTracer
 import io.opentracing.util.GlobalTracer
-import kotlinx.coroutines.asContextElement
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.withContext
 import mu.KLoggable
 import org.junit.Before
 import org.junit.Test
-import java.util.Stack
 
 
 class ClassHasLogging: KLoggable {
@@ -50,11 +44,9 @@ class OpenTracingLogTest {
     fun `write logs with messages to active spans`() = runBlocking {
         val classHasLogging = ClassHasLogging()
 
-        withContext(threadLocalSpanStack.asContextElement(Stack<Span>())) {
-            classHasLogging.test()
-            classHasLogging.testWithException()
-            classHasLogging.testErrorLog()
-        }
+        classHasLogging.test()
+        classHasLogging.testWithException()
+        classHasLogging.testErrorLog()
 
         with(mockTracer.finishedSpans()) {
             with(this[0].logEntries()[0].fields()) {

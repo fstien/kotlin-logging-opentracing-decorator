@@ -3,7 +3,6 @@ buildscript {
     ext.opentracing_version = "0.33.0"
     ext.log4j_version = "2.11.1"
     ext.kotlin_logging_version = "2.0.3"
-    ext.ktorOpenTracingVersion = "0.1.1"
 }
 
 plugins {
@@ -37,7 +36,7 @@ dependencies {
     testImplementation "org.apache.logging.log4j:log4j-slf4j-impl:$log4j_version"
 
     testImplementation "io.opentracing:opentracing-mock:$opentracing_version"
-    testImplementation "com.zopa:ktor-opentracing:$ktorOpenTracingVersion"
+    testImplementation "com.zopa:ktor-opentracing:0.3.3"
 }
 
 ext {
